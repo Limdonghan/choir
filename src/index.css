@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Malgun+Gothic:wght@400;700&display=swap');
+
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #bdc3c7;
+  --accent-color: #e74c3c;
+  --highlight-bg: #fdfad5;
+  --bg-light: #f9fbfd;
+  --bg-gray: #ecf0f1;
+  --btn-excel: #107c41;
+  --btn-pdf: #27ae60;
+  --text-blue: #2980b9;
+  --text-gray: #7f8c8d;
+}
+
+body {
+  font-family: 'Malgun Gothic', '맑은 고딕', sans-serif;
+  font-size: 10.5pt;
+  color: #333;
+  line-height: 1.3;
+  margin: 0;
+  background-color: #f4f7f6;
+}
+
+.container {
+  max-width: 900px;
+  margin: 20px auto;
+  background-color: white;
+  padding: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+h1 {
+  text-align: center;
+  color: var(--primary-color);
+  font-size: 18pt;
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+/* 유틸리티 클래스 */
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.blue-text { color: var(--text-blue); }
+.red-text { color: var(--accent-color); }
+.font-bold { font-weight: bold; }
+
+/* 버튼 스타일 */
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.2s;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+}
+.btn-primary:hover { background-color: #1a252f; }
+
+.btn-success {
+  background-color: var(--btn-pdf);
+  color: white;
+}
+.btn-success:hover { background-color: #219a52; }
+
+/* 헤더 및 레이아웃 */
+.header-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 5px;
+}
+th, td {
+  border: 1px solid var(--secondary-color);
+  padding: 8px;
+}
+th {
+  background-color: var(--bg-gray);
+  font-weight: bold;
+  text-align: center;
+  color: var(--primary-color);
+  font-size: 11pt;
+}
+
+@media print {
+  body { background-color: white; margin: 15mm; }
+  .container { box-shadow: none; margin: 0; padding: 0; }
+  .no-print { display: none !important; }
+}

@@ -1,0 +1,199 @@
+/* ReportForm.css */
+#report-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  background-color: #fff;
+  font-family: 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif;
+}
+
+.report-container {
+  border: 1px solid #eee;
+  padding: 40px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+/* 헤더: 제목 및 기간 */
+.report-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.report-title {
+  font-size: 28px;
+  font-weight: 800;
+  color: #333;
+  margin-bottom: 10px;
+  letter-spacing: -1px;
+}
+
+.report-period {
+  font-size: 18px;
+  color: #666;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #34495e;
+  display: inline-block;
+  min-width: 400px;
+}
+
+/* 수입/지출 2단 레이아웃 */
+.report-content {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.table-section {
+  flex: 1;
+}
+
+.table-section h3 {
+  text-align: center;
+  background-color: #f8f9fa;
+  padding: 10px;
+  margin-bottom: 0;
+  border: 1px solid #ddd;
+  border-bottom: none;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.table-section table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-section th {
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  padding: 10px 5px;
+  font-size: 14px;
+  color: #333;
+}
+
+.table-section td {
+  border: 1px solid #ddd;
+  padding: 0;
+  height: 35px;
+}
+
+.table-section input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  padding: 5px 8px;
+  font-size: 14px;
+  outline: none;
+  background: transparent;
+}
+
+.table-section input:focus {
+  background-color: #fffde7;
+}
+
+/* 금액 우측 정렬 */
+.amount-input {
+  text-align: right;
+  padding-right: 12px !important;
+  box-sizing: border-box;
+}
+
+/* 하단 요약 바 */
+.report-summary-bar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #f8f9fa;
+  border: 2px solid #34495e;
+  border-radius: 15px;
+  padding: 20px;
+  margin-top: 30px;
+}
+
+.summary-item {
+  font-size: 18px;
+  font-weight: 700;
+  color: #333;
+}
+
+.summary-item .label {
+  margin-right: 10px;
+}
+
+.summary-item .value {
+  font-size: 20px;
+}
+
+.summary-item.income .value { color: #2980b9; }
+.summary-item.balance .value { color: #e74c3c; }
+
+/* 푸터: 서명 등 */
+.report-footer {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.signature-section {
+  margin-top: 30px;
+}
+
+.sign-row {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 40px;
+  font-weight: 600;
+}
+
+/* 버튼 세션 */
+.header-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.btn {
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  border: none;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-success { background: #27ae60; color: white; }
+.btn-add {
+  width: 100%;
+  border: 1px dashed #ddd;
+  background: #fff;
+  padding: 5px;
+  cursor: pointer;
+  color: #999;
+}
+.btn-add:hover { background: #f8f9fa; color: #666; }
+
+.btn-remove {
+  background: none;
+  border: none;
+  color: #ccc;
+  cursor: pointer;
+  font-size: 18px;
+}
+.btn-remove:hover { color: #e74c3c; }
+
+/* 인쇄 스타일 */
+@media print {
+  body { background: white; }
+  #report-wrapper { padding: 0; max-width: 100%; }
+  .no-print { display: none !important; }
+  .report-container { border: none; box-shadow: none; padding: 0; }
+  .report-period { min-width: 100%; }
+  .report-summary-bar { 
+    background-color: #f8f9fa !important; 
+    -webkit-print-color-adjust: exact; 
+    print-color-adjust: exact; 
+  }
+  input { border: none !important; }
+}
