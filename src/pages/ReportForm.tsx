@@ -64,7 +64,8 @@ const ReportForm: React.FC = () => {
     const isIncome = type === 'INCOME';
     const items = isIncome ? [...incomeItems] : [...expenseItems];
     if (field === 'amount') {
-      value = parseInt(String(value).replace(/,/g, ''), 10) || 0;
+      const numericValue = String(value).replace(/\D/g, '');
+      value = numericValue ? parseInt(numericValue, 10) : 0;
     }
     items[index] = { ...items[index], [field]: value };
     isIncome ? setIncomeItems(items) : setExpenseItems(items);
@@ -113,7 +114,7 @@ const ReportForm: React.FC = () => {
 
       <div className="report-container">
         <div className="report-header">
-          <h1 className="report-title">성토마 성가대</h1>
+          <h1 className="report-title">성토마스 성가대</h1>
           <div className="report-period">
             {getTitlePeriod()}
             <div className="period-inputs no-print" style={{ fontSize: '12px', marginTop: '10px' }}>
